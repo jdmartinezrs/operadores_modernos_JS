@@ -186,12 +186,12 @@ GFPI-F-135 V04
 • Organizamos mejor la información.
 
 5. Manejo de errores
-El bloque try...catch es una estructura de JavaScript diseñada para capturar y manejar
-errores durante la ejecución, evitando que el programa se detenga por completo.
+El bloque try...catch es una estructura de JavaScript diseñada para capturar y manejar errores durante la ejecución, evitando que el programa se detenga por completo.
+
 Estructura:
 • try: contiene el código que podría generar un error.
-• catch: captura el error si ocurre, permitiendo controlar la situación y continuar con
-la ejecución.
+• catch: captura el error si ocurre, permitiendo controlar la situación y continuar con la ejecución.
+
 Ejemplo:
 console.log("Inicio");
 

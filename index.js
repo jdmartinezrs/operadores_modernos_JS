@@ -1,11 +1,10 @@
-const persona = {
-nombre: "Laura",
-edad: 28,
-ciudad: "Bogotá"
-};
+console.log("Inicio");
 
-//forma tradicional
+try{
+    const usuario= {nombre: "Juan", edad: 30};
+    console.log(usuario.nombre); //genera error
+} catch (error){
+    console.log("Ocurrió un error:", error.message);
+}
 
-//const nombre = persona.nombre;
-const {nombre, edad} = persona;
-console.log(persona)
+console.log("fin del programa");
