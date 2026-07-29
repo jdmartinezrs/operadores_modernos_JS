@@ -1,4 +1,4 @@
-import { registrarUsuario, agregarProducto } from './ejercicios/index.js'
+import { registrarUsuario, agregarProducto, mostrarDireccion } from './ejercicios/index.js'
 
 registrarUsuario(
     {
@@ -21,3 +21,5 @@ const copiaProductos = [...productos, "auriculares","auriculares","auriculares",
 
 console.log("Lista original de productos:", productos);
 console.log("Nueva lista de productos:", copiaProductos);
+
+mostrarDireccion ({ ciudad: "Bogotá", pais: "Colombia" })
