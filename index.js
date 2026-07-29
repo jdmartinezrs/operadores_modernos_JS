@@ -1,10 +1,17 @@
-console.log("Inicio");
+import { registrarUsuario } from './ejercicios/index.js'
 
-try{
-    const usuario= {nombre: "Juan", edad: 30};
-    console.log(usuario.nombre); //genera error
-} catch (error){
-    console.log("Ocurrió un error:", error.message);
-}
+registrarUsuario(
+    {
+        nombre: "Juan",
+        edad: 30
+    }
+    ,{
+        nombre: "Pedro",
+        edad: 25
+    },
+    {
+        nombre: "Maria",
+        edad: 28
+    }
+)
 
-console.log("fin del programa");

@@ -1,1 +1,1 @@
-export * from '../ejercicios/parametroRest.js'
+export * from './ejercicio1.js';
