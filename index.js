@@ -1,4 +1,4 @@
-import { registrarUsuario, agregarProducto, mostrarDireccion } from './ejercicios/index.js'
+import { registrarUsuario, agregarProducto, mostrarDireccion, actualizarNotas } from './ejercicios/index.js'
 
 registrarUsuario(
     {
@@ -23,3 +23,19 @@ console.log("Lista original de productos:", productos);
 console.log("Nueva lista de productos:", copiaProductos);
 
 mostrarDireccion ({ ciudad: "Bogotá", pais: "Colombia" })
+
+
+////Ejercicio3
+
+const estudiante = {
+nombre: "Laura",
+notas: [4.0, 3.8]
+};
+
+const estudianteActualizado = actualizarNotas(estudiante, 4.5,5.0);
+
+console.log("Objeto original: ");
+console.log(estudiante);
+
+console.log("Nuevo objeto: ");
+console.log(estudianteActualizado)
