@@ -39,3 +39,29 @@ console.log(estudiante);
 
 console.log("Nuevo objeto: ");
 console.log(estudianteActualizado)
+
+
+//ejercicio 5
+
+const inventario = [
+  { id: 1, nombre: "Teclado", precio: 120000 },
+  { id: 2, nombre: "Mouse", precio: 50000 }
+];
+
+console.log("Inventario original:");
+console.log(inventario);
+
+const nuevoInventario = agregarItems(
+  inventario,
+  { id: 3, nombre: "Monitor", precio: 850000 },
+  { id: 4, nombre: "Audífonos", precio: 180000 }
+);
+
+console.log("\nNuevo inventario:");
+console.log(nuevoInventario);
+
+console.log("\nInformación de un producto:");
+obtenerInfo(nuevoInventario[2]);
+
+console.log("\nProbando manejo de errores:");
+obtenerInfo({ id: 5, nombre: "Cámara" });
