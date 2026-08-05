@@ -6,15 +6,21 @@ export function crearEstudiante(nombre, ...notas) {
     if (notas.length === 0) {
       throw new Error("Se debe registrar al menos una nota");
     }
-    notas.forEach((nota) => {
+    for (let i = 0; i < notas.length; i++) {
+      const nota = notas[i];
       if (typeof nota !== "number" || Number.isNaN(nota)) {
         throw new Error("Todas las notas deben ser números");
       }
-    });
+    }
     const [primeraNota, ...restoNotas] = notas;
-    const promedioResto = restoNotas.length
-      ? restoNotas.reduce((sum, nota) => sum + nota, 0) / restoNotas.length
-      : 0;
+    let promedioResto = 0;
+    if (restoNotas.length > 0) {
+      let suma = 0;
+      for (let i = 0; i < restoNotas.length; i++) {
+        suma += restoNotas[i];
+      }
+      promedioResto = suma / restoNotas.length;
+    }
     return {
       nombre,
       primeraNota,

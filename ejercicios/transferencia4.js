@@ -3,20 +3,28 @@ export function estadisticas(jugadores) {
     if (!Array.isArray(jugadores) || jugadores.length === 0) {
       throw new Error("Los jugadores deben ser un arreglo no vacío");
     }
-    jugadores.forEach((jugador) => {
+    for (let i = 0; i < jugadores.length; i++) {
+      const jugador = jugadores[i];
       if (!jugador || typeof jugador !== "object" || !jugador.stats || typeof jugador.stats.puntos !== "number") {
         throw new Error("Cada jugador debe tener stats con puntos numéricos");
       }
-    });
-    const [primerJugador] = jugadores;
-    const {
-      stats: { puntos: puntosPrimerJugador },
-    } = primerJugador;
-    const puntosTotales = jugadores.reduce((sum, jugador) => sum + jugador.stats.puntos, 0);
-    const jugadoresProcesados = jugadores.map((jugador) => ({
-      ...jugador,
-      stats: { ...jugador.stats },
-    }));
+    }
+    const primerJugador = jugadores[0];
+    const puntosPrimerJugador = primerJugador.stats.puntos;
+    let puntosTotales = 0;
+    const jugadoresProcesados = [];
+    for (let i = 0; i < jugadores.length; i++) {
+      const jugador = jugadores[i];
+      puntosTotales += jugador.stats.puntos;
+      const copiaJugador = {
+        nombre: jugador.nombre,
+        stats: {
+          puntos: jugador.stats.puntos,
+          asistencias: jugador.stats.asistencias,
+        },
+      };
+      jugadoresProcesados.push(copiaJugador);
+    }
     return {
       puntosPrimerJugador,
       puntosTotales,
